@@ -1,0 +1,151 @@
+
+.wrapper{
+    background: #FAF9FC;
+    width: 100%;
+    padding:0 32px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+}
+
+
+.when{
+    width: 100%;
+    padding-top: 32px;
+    border-top: 1px solid #e8e8e8;
+    padding-bottom: 12px;
+}
+
+.title{
+    color: var(--primary);
+    height: 36px;
+    line-height: 36px;
+    font-size: 32px;
+    margin-left: 24px;
+    position: relative;
+    font-weight: 700;
+}
+.title::after {
+    content: '';
+    /* width: 8px; */
+    height: 32px;
+    border: 4px solid var(--primary);
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    left: -24px;
+}
+
+.panel {
+    width: 100%;
+    /* height: 150px; */
+    margin-top: 16px;
+    display: flex;
+    font-size: 32px;
+    line-height: 32px;
+    color: var(--primaryNeutral);
+}
+
+.left{
+    width: 50%;
+    padding-top: 16px;
+    position: relative;
+    display: inline-block;
+}
+
+.left::after{
+    content: '';
+    width: 0px;
+    height: 148px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -74px;
+    border: 1px solid #e8e8e8;
+}
+
+.right{
+    width: 50%;
+    padding-top: 16px;
+    display: inline-block;
+}
+
+.where {
+    width: 100%;
+    padding-top: 32px;
+    border-top: 1px solid #e8e8e8;
+}
+
+.panel i{
+    width: 32px;
+    height: 27.6px;
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 16px;
+    position: relative;
+    vertical-align: -16px;
+    margin-left: 20px;
+    padding-bottom: 32px;
+}
+
+.icon {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+}
+
+.icon1 {
+    composes: icon;
+    background: url('@/asserts/svgs/date-from.svg') no-repeat center center;
+    filter: drop-shadow(34px 0 var(--greend));
+    left: -34px;
+}
+.icon2 {
+    composes: icon;
+    background: url('@/asserts/svgs/date-to.svg') no-repeat center center;
+    filter: drop-shadow(34px 0 var(--greend));
+    left: -34px;
+}
+
+.left p {
+    font-size: 64px;
+    height: 80px;
+    line-height: 80px;
+    color: var(--greend);
+    margin-top: 12px;
+    padding-left: 60px;
+}
+.left p span {
+    font-size: 28px;
+    line-height: 20px;
+    padding-left: 8px;
+}
+
+.location{
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+    font-size: 28px;
+    color: var(--primaryNeutral);
+    margin: 10px 0;
+}
+.locationDetail {
+    width: 100%;
+    height: 26px;
+    line-height: 26px;
+    font-size: 26px;
+    color: var(--primaryNeutral);
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+.img{
+    width: 100%;
+    height: 176px;
+    background: url('@/asserts/imgs/gmap.png') no-repeat center center;
+    display: block;
+    background-size: 100%;
+}
+
+.where .panel {
+    flex-direction: column;
+}

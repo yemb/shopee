@@ -1,0 +1,131 @@
+
+
+.detailWrapper{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: #FAF9FC;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+.content{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    margin: 80px 0 150px 0;
+}
+
+.contentFixed{
+    composes: content;
+    margin: 172px 0 150px 0;
+}
+
+/* ##########################################################################  whenwhere */
+/* ##########################################################################  whenwhere */
+
+
+.wrapper {
+    width: 100%;
+    height: 90px;
+    border-top: 2px solid #e8e8e8;
+    border-bottom: 2px solid #e8e8e8;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.wrapper li {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.wrapper li:nth-child(1)::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 23.4px;
+    border: 1px solid #e8e8e8;
+    right: 0;
+    top: 50%;
+    margin-top: -11.7px;
+}
+.wrapper li:nth-child(2)::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 23.4px;
+    border: 1px solid #e8e8e8;
+    right: 0;
+    top: 50%;
+    margin-top: -11.7px;
+}
+
+.wrapper i {
+    width: 40px;
+    height: 40px;
+    /* overflow: hidden; */
+}
+
+.detail{
+    width: 100%;
+    height: 100%;
+    background: url('@/asserts/svgs/info-outline.svg') no-repeat center center;
+    background-size: 33.4px 33.4px;
+}
+
+.detailActive{
+    composes: detail;
+    background: url('@/asserts/svgs/info.svg') no-repeat center center;
+    filter: drop-shadow(40px 0 var(--greena));
+    left: -40px;
+    position: relative;
+}
+
+.participants{
+    width: 100%;
+    height: 100%;
+    background: url('@/asserts/svgs/people-outline.svg') no-repeat center center;
+    background-size: 36.6px 23.4px;
+}
+
+.participantsActive{
+    composes: participants;
+    background: url('@/asserts/svgs/people.svg') no-repeat center center;
+    filter: drop-shadow(40px 0 var(--greena));
+    left: -40px;
+    position: relative;
+}
+
+
+.comments{
+    width: 100%;
+    height: 100%;
+    background: url('@/asserts/svgs/comment-outline.svg') no-repeat center center;
+    background-size: 35.6px 35.6px;
+}
+.commentsActive{
+    composes: comments;
+    background: url('@/asserts/svgs/comment.svg') no-repeat center center;
+    filter: drop-shadow(40px 0 var(--greena));
+    left: -40px;
+    position: relative;
+}
+
+.text {
+    font-size: 24px;
+    line-height: 30px;
+    color: #8c8c8c;
+}
+.textActive{
+    composes: text;
+    color: var(--greena);
+}

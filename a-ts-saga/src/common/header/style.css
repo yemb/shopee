@@ -1,0 +1,63 @@
+/* import '@/asserts/css/reset.css' */
+
+.title{
+    color: blue;
+}
+.wrapper {
+    composes: flex from '@/asserts/css/layout.css';
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background: var(--primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 28px 0 38px; 
+    box-sizing: border-box;
+    z-index: 2000;
+}
+i{
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.leftSearch{
+    composes: img;
+    background: url('@/asserts/svgs/search.svg') no-repeat center center;
+    background-size: 36px 36px;
+    color: var(--fontcolor);
+}
+
+.leftHome{
+    composes: img;
+    background: url('@/asserts/svgs/home.svg') no-repeat center center;
+    background-size: 38px 32px;
+    color: var(--fontcolor);
+}
+
+.mid{
+    composes: img;
+    width: 41.8px;
+    left: -48px;
+    filter: drop-shadow(48px 0 var(--greend));
+    background: url('@/asserts/svgs/logo-cat.svg') no-repeat  center center;
+    background-size: 41.8px 48px;
+}
+.right{
+    composes: img;    
+    border-radius: 50%;
+    /* left: -48px;
+    filter: drop-shadow(48px 0 var(--greend)); */
+    background: white url('@/asserts/svgs/logo-cat.svg') no-repeat center center;
+    background-size: 70%;
+}

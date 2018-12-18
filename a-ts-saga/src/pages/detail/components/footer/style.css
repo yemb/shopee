@@ -1,0 +1,159 @@
+
+.footerWrapper{
+    width: 100%;
+    height: 112px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.footerWrapper i{
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+.icon{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.left {
+    width: 360px;
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+.right{
+    width: 280px;
+    height: 100%;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background: var(--greend);
+}
+
+.commentIcon{
+    composes: icon;
+    background: url('@/asserts/svgs/comment-single.svg') no-repeat center center;
+    filter: drop-shadow(-50px 0 #444);
+    left: 50px;
+}
+
+.likeIcon{
+    composes: icon;
+    background: url('@/asserts/svgs/like.svg') no-repeat center center;
+    filter: drop-shadow(50px 0 var(--greend));
+    left: -50px;
+}
+
+.notLikeIcon {
+    composes: likeIcon;
+    background: url('@/asserts/svgs/like-outline.svg') no-repeat center center;
+    filter: drop-shadow(-50px 0 #444);
+    left: 50px;
+}
+
+.goingIcon{
+    composes: icon;
+    background: url('@/asserts/svgs/check.svg') no-repeat center center;
+    background-size: 41.6px 34.6px;
+    left: -50px;
+    filter: drop-shadow(50px 0 var(--primary));
+}
+.notGoingIcon{
+    composes: goingIcon;
+    background: url('@/asserts/svgs/check-outline.svg') no-repeat center center;
+    filter: drop-shadow(-50px 0 #536123);
+    left: 50px;
+}
+
+
+.goingText{
+    /* height: 48px; */
+    font-weight: 600;
+    line-height: 36px;
+    font-size: 28px;
+    margin-left: 26px;
+    color: var(--primary);
+}
+
+.NotGoingText{
+    composes: goingText;
+    color: #788C36;
+    font-size: 28px;
+}
+
+
+
+/* comments******************** */
+
+.cross{
+    margin-left: 16px;
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+}
+
+.crossIcon{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    background: url('@/asserts/svgs/cross.svg') no-repeat center center;
+    filter: drop-shadow(50px 0 #fff);
+    left: -50px;
+    vertical-align: 1px;
+}
+
+.comment{
+    margin: 11px 0;
+    height: 68px;
+    width: 414px;
+    /* line-height: 36px; */
+    font-size: 28px;
+    padding: 14px 38px !important;
+    vertical-align: 1px;
+    border-radius: 40px;
+    background: #fff;
+    color: var(--primaryDark)
+}
+.comment:hover{
+    background: #eee;
+}
+
+.comment::placeholder{
+    color: var(--primaryLight);
+}
+
+.send{
+    height: 100%;
+    width: 128px;
+    background: var(--greend);
+    float: right;
+    overflow: hidden;
+    vertical-align: 1px;
+
+}
+
+.sendIcon{
+    width: 100%;
+    height: 100%;
+    background: url('@/asserts/svgs/send.svg') no-repeat center center;
+    background-size: 56px 48px;
+    filter: drop-shadow(200px 0 var(--primary));
+    display: inline-block;
+    position: relative;
+    left: -200px;
+}

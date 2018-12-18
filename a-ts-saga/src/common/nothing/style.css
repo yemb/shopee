@@ -1,0 +1,43 @@
+
+.wrapper{
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    margin-left: -125px;
+    top: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrapperMe{
+    composes: wrapper;
+    top: 100px;
+}
+
+.wrapper i {
+    width: 144px;
+    height: 144px;
+    overflow: hidden;
+}
+
+.icon{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    background: url('@/asserts/svgs/no-activity.svg') no-repeat center center;
+    background-size: 120px 120px;
+    filter: drop-shadow(150px 0 var(--primaryLight));
+    left: -150px;
+}
+.text {
+    height: 36px;
+    line-height: 36px;
+    font-size: 26px;
+    word-wrap: none;
+    font-weight: lighter;
+    color: #bababa;
+}

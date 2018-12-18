@@ -1,0 +1,19 @@
+
+.active {
+    font-family: 'SourceSansPro-Regular';
+    font-size: 24px;
+    color: var(--primaryDark);
+    height: 48px;
+    line-height: 30px;
+    padding: 8px 19px 10px 15px;
+    border: 2px solid var(--primaryLight);
+    border-radius: 24px;
+    background: var(--greene);
+    cursor: pointer;
+}
+
+.notActive{
+    composes: active;
+    color: #fff;
+    background: transparent;
+}
