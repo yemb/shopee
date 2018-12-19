@@ -13,8 +13,9 @@ const defaultState = fromJS({
     activeChannel: null,
 
     dates: ['ANY TIME','TODAY','TOMORROW','THIS WEEK','THIS MOUTH','LATER'],
-    activeDate: null
+    activeDate: null,
 
+    page: 1
     // activeSearch: false
 })
 
@@ -24,7 +25,14 @@ export default (state = defaultState, action: any) => {
             return state.merge({
                 events: action.events,
                 hasMore: action.hasMore,
-                success: true
+                success: true,
+                page: 1
+            })
+        case constants.ADD_EVENTS: 
+            return state.merge({
+                events: state.get('events').concat(action.events),
+                hasMore: action.hasMore,
+                page: state.get('page') + 1
             })
         case constants.TOGGLE_SEARCH:
             // return state.set('searchState', action.value);
@@ -54,7 +62,8 @@ export default (state = defaultState, action: any) => {
                 hasMore: action.hasMore,
                 activeChannel: null,
                 activeDate: null,
-                haveSearch: false
+                haveSearch: false,
+                page: 1
             })
     }
     return state

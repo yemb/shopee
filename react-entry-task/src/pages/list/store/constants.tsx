@@ -28,3 +28,6 @@ export type ADD_LIKE = typeof ADD_LIKE
 
 export const CLEAR_SEARCH = 'list/CLEAR_SEARCH'
 export type CLEAR_SEARCH = typeof CLEAR_SEARCH
+
+export const ADD_EVENTS = 'list/ADD_EVENTS'
+export type ADD_EVENTS = typeof ADD_EVENTS

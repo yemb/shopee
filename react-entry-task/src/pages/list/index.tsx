@@ -12,6 +12,9 @@ import { connect } from 'react-redux';
 import { actionCreators } from './store';
 
 class List extends React.Component<any> {
+  public handleScroll() {
+    console.log('handlescroll')
+  }
   public render() {
     const { 
       events,
@@ -28,10 +31,10 @@ class List extends React.Component<any> {
       getEventsBySearch,
       clearSearch,
       success,
-      haveSearch
+      haveSearch,
+      page
     } = this.props
-    console.log('events in list', events)
-
+    
     const ifSearchActive = ()=> {
       return activeDate || activeChannel
     }
@@ -46,12 +49,11 @@ class List extends React.Component<any> {
     const getActiveChannelName = () => {
       let result = 'all'
       channels.forEach((ele:any) => {
-        console.log(ele.get('id'),activeChannel)
+        // console.log(ele.get('id'),activeChannel)
         if(ele.get('id') === activeChannel) {
           result =  ele.get('name')
         }
       })
-      console.log(result)
       return result
     }
 
@@ -67,14 +69,10 @@ class List extends React.Component<any> {
       )
     }else {
       return (
-        // <CSSTransition
-        //   in={searchState}
-        //   timeout={200} 
-        //   classNames="slide"
-        // >
           <section className={!searchState ? styles.wrapper : styles.noScrollWrapper}>
-  
-            {/* 搜索 */}
+            {/* *****
+            *************************************** 侧边 搜索 *****************************************
+            ***** */}
             <section className={searchState ? styles.searchWrapper : styles.notSearchWrapper}>
                 <p className={styles.title}>DATE</p>
                 <div className={styles.dates}>
@@ -108,9 +106,10 @@ class List extends React.Component<any> {
                   }
                 </div>
             </section>
-            
-            {/* events List */}
   
+            {/* *****
+            *************************************** list *****************************************
+            ***** */}
             <section className={searchState ? styles.listWrapper : styles.notSearchlist}>
               <Header isHome={true} toggleSearch={clickSearch}/>
 
@@ -145,19 +144,21 @@ class List extends React.Component<any> {
               {/* 列表 */}
               {
                 events.length ?
-                <ListUI events={events} hasMore={hasMore} loading={true} identify="list"/> :
+                <ListUI 
+                  events={events} 
+                  hasMore={hasMore} 
+                  loading={true} 
+                  identify="list"
+                  page={page}
+                /> :
                 <Nothing/>
               }
-              {/* </div> */}
             </section>
           </section>
-          
-        // </CSSTransition>
       );
-    }
-    
-    
+    }  
   }
+
   public componentDidMount() {
     this.props.getEvents()
   }
@@ -173,7 +174,8 @@ const mapStateToProps = (state: any) => {
     activeChannel: state.getIn(['list', 'activeChannel']),
     dates: state.getIn(['list', 'dates']),
     activeDate: state.getIn(['list', 'activeDate']),
-    haveSearch: state.getIn(['list', 'haveSearch'])
+    haveSearch: state.getIn(['list', 'haveSearch']),
+    page: state.getIn(['list', 'page'])
   }
 }
 
@@ -181,7 +183,6 @@ const mapDispatchToProps = (dispatch: any) => {
   return {
     getEvents(events?: any){
       if(!events){
-        console.log('clear search')
         dispatch(actionCreators.getEvents())
       }
     },
@@ -198,7 +199,6 @@ const mapDispatchToProps = (dispatch: any) => {
       dispatch(actionCreators.toggleSearch(value))
     },
     toggleChannel(id: any) {
-      console.log('toggleChannel')
       dispatch(actionCreators.toggleChannel(id))
     },
     toggleDate(dateName: any) {

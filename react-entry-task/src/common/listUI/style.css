@@ -1,12 +1,21 @@
 
-.listWrapper {
+.Wrapper {
     background: #FAF9FC;
     padding-left: 32px;
     padding-right: 32px;
     width: 100%;
     height: 100%;
     overflow: auto;
+    /* height: auto; */
     box-sizing: border-box;
+    /* position: absolute; */
+}
+
+.foot{
+    text-align: center;
+    font-size: 30px;
+    color: #aaa;
+    padding: 20px;
 }
 
 .loader{

@@ -106,30 +106,60 @@ export const listTime = (prev) => {
     return result
 }
 
-export const searchTime = (rule, beginTime) => {
-    const begin = new Date(beginTime)
-    const now = new Date()
-
-    if(rule === 'TODAY' && begin-now < 1000*60*60*24) {
-        return true
+export const searchTime = (rule) => {
+    let now = new Date()
+    now = now.getTime()
+    if(rule === 'TODAY') {
+        now += 1000 * 60 * 60 * 24
+        // now = new Date(now)
+        return now
     }
-    if(rule === 'ANY TIME') {
-        return true
+    if(rule === 'TOMORROW') {
+        now += 1000 * 60 * 60 * 24 * 2
+        // now = (new Date()).setTime(now)
+        return now
     }
-    if(rule === 'TOMORROW' && begin - now < 1000*60*60*24*2) {
-        return true
+    if(rule === 'THIS WEEK') {
+        now += 1000 * 60 * 60 * 24 * 7
+        // now = new Date(now)
+        return now
     }
-    if(rule === 'THIS WEEK' && begin - now < 1000*60*60*24*7) {
-        return true
+    if(rule === 'THIS MOUTH') {
+        now += 1000 * 60 * 60 * 24 * 30
+        // now = new Date(now)
+        return now
     }
-    if(rule === 'THIS MOUTH' && begin - now < 1000*60*60*24*30) {
-        return true
+    if(rule === 'LATER') {
+        now += 1000 * 60 * 60 * 24 * 30
+        // now = new Date(now)
+        return now
     }
-    if(rule === 'LATER' && begin- now > 1000*60*60*24*30) {
-        return true
-    }
-    return false
 }
+
+// export const searchTime = (rule, beginTime) => {
+//     const begin = new Date(beginTime)
+//     const now = new Date()
+
+//     if(rule === 'TODAY' && begin-now < 1000*60*60*24) {
+//         return true
+//     }
+//     if(rule === 'ANY TIME') {
+//         return true
+//     }
+//     if(rule === 'TOMORROW' && begin - now < 1000*60*60*24*2) {
+//         return true
+//     }
+//     if(rule === 'THIS WEEK' && begin - now < 1000*60*60*24*7) {
+//         return true
+//     }
+//     if(rule === 'THIS MOUTH' && begin - now < 1000*60*60*24*30) {
+//         return true
+//     }
+//     if(rule === 'LATER' && begin- now > 1000*60*60*24*30) {
+//         return true
+//     }
+//     return false
+// }
 
 export const commentTime = (time) => {
     const now = new Date()
@@ -159,3 +189,15 @@ export const commentTime = (time) => {
         }
     }
 }
+
+// let now = new Date()
+// console.log(now)
+
+// now = now.getTime()
+
+// console.log(now)
+
+// now += 1000 * 60*60*24
+// console.log(now)
+// now = (new Date()).setTime(now)
+// console.log(now)

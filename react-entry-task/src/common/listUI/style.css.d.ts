@@ -1,4 +1,6 @@
-export const listWrapper: string;
+export const Wrapper: string;
+export const wrapper: string;
+export const foot: string;
 export const loader: string;
 export const item: string;
 export const top: string;
