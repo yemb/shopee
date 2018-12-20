@@ -145,6 +145,7 @@ redux-saga 劫持指定 type 的action，然后进行异步操作后，再put一
     typings-for-css-modules-loader, 替代 css-loader ，通过css文件自动生成.d.ts声明文件
 
 ##  无限加载滚动
+
 #### refs获取滚动元素
 ```
     private myRef: React.RefObject<HTMLDivElement>;
@@ -160,7 +161,7 @@ redux-saga 劫持指定 type 的action，然后进行异步操作后，再put一
 #### 添加监听滚动事件
 根据 scrollTop、scrollHeight、clientHieght的关系判断是否滚动到了底部。
 ```
-public handleScroll() {
+    public handleScroll() {
         const scrollTop = this.myRef.current!.scrollTop
         const scrollHeight = this.myRef.current!.scrollHeight
         const clientHeight = this.myRef.current!.clientHeight
@@ -190,3 +191,18 @@ public handleScroll() {
 1. 封装axios请求时，对需要token字段的请求判断sessionStorage中是否有token字段
 2. 如果没有则跳到login页面，并提示需要先登录。如有则取token加入header中，继续请求。
 3. login成功返回的token字段存入sessionStorage中
+
+## 路由设计
+在app.tsx中：
+```
+        <BrowserRouter>
+          <div>
+            <Route path='/' exact={true} component={Login} />
+            <Route path='/login' exact={true} component={Login} />
+            <Route path='/list' exact={true} component={List} />
+            <Route path='/me' exact={true} component={Me} />
+            <Route path='/detail/:id' exact={true} component={Detail} />
+            <Route path='*' exact={true} component={notFound}/>
+          </div>
+        </BrowserRouter>
+```
