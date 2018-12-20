@@ -11,7 +11,26 @@ import * as styles from './style.css'
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
 
-class List extends React.Component<any> {
+interface IProps {
+  events: any,
+  searchState: any, 
+  channels: any, 
+  toggleSearch: any, 
+  dates: any, 
+  activeDate: any, 
+  activeChannel: any,
+  filterChannel: any,
+  toggleChannel: any,
+  toggleDate: any,
+  hasMore: any,
+  getEventsBySearch: any,
+  clearSearch: any,
+  success: any,
+  haveSearch: any,
+  getEvents: any
+}
+
+class List extends React.Component<IProps> {
   public handleScroll() {
     console.log('handlescroll')
   }
@@ -32,7 +51,6 @@ class List extends React.Component<any> {
       clearSearch,
       success,
       haveSearch,
-      page
     } = this.props
     
     const ifSearchActive = ()=> {
@@ -147,9 +165,7 @@ class List extends React.Component<any> {
                 <ListUI 
                   events={events} 
                   hasMore={hasMore} 
-                  loading={true} 
                   identify="list"
-                  page={page}
                 /> :
                 <Nothing/>
               }
@@ -175,7 +191,6 @@ const mapStateToProps = (state: any) => {
     dates: state.getIn(['list', 'dates']),
     activeDate: state.getIn(['list', 'activeDate']),
     haveSearch: state.getIn(['list', 'haveSearch']),
-    page: state.getIn(['list', 'page'])
   }
 }
 

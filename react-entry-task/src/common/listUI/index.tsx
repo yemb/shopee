@@ -7,7 +7,17 @@ import Item from './item'
 import { connect } from 'react-redux';
 import { actionCreators } from '@/pages/list/store';
 
-class ListUI extends React.Component<any,any> {
+interface IProps {
+    events: any, 
+    hasMore: any, 
+    identify: any,
+    page?:any,
+    activeChannel: any,
+    activeDate: any,
+    getMoreEvent: any
+}
+
+class ListUI extends React.Component<IProps,any> {
     private myRef: React.RefObject<HTMLDivElement>;
     constructor(props: any) 
     {
@@ -56,9 +66,6 @@ class ListUI extends React.Component<any,any> {
         const scrollHeight = this.myRef.current!.scrollHeight
         const clientHeight = this.myRef.current!.clientHeight
         const preLoadDis = 30
-        console.log(this.myRef.current!.scrollHeight)
-        console.log(this.myRef.current!.scrollTop)
-        console.log(this.myRef.current!.clientHeight)
 
         if(this.state.isend) {
             return
@@ -67,7 +74,6 @@ class ListUI extends React.Component<any,any> {
             this.setState ({
                 loading: true
             })
-            // }
             setTimeout(()=>{
                 this.props.getMoreEvent(this.props.page, this.props.activeChannel, this.props.activeDate)
                 this.setState({
@@ -86,6 +92,7 @@ const mapStateToProps = (state: any) => {
     return {
         activeChannel: state.getIn(['list', 'activeChannel']),
         activeDate: state.getIn(['list', 'activeDate']),
+        page: state.getIn(['list', 'page'])
     }
 }
 

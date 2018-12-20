@@ -6,9 +6,29 @@ import { actionCreators } from './store';
 
 import Toast from '@/common/toast/index'
 
-class Login extends React.Component<any> {
+interface IProps {
+  loginStatus: any,
+  loginError: any,
+  passWord: any,
+  userName: any,
+  lang: any,
+  changeLogin: any,
+  changeInput: any,
+  changeLang: any
+}
+
+class Login extends React.Component<IProps> {
   public render() {
-    const { loginStatus, changeLogin, userName, passWord, changeInput,loginError, lang, changeLang}  = this.props as any
+    const { 
+      loginStatus, 
+      changeLogin, 
+      userName, 
+      passWord, 
+      changeInput,
+      loginError, 
+      lang, 
+      changeLang
+    }  = this.props
 
     const buttonText = () => {
       if(lang === 'en') {
@@ -17,11 +37,6 @@ class Login extends React.Component<any> {
         return 'Eng'
       }
     }
-    // const addpage = () => {
-    //   console.log(this.state.page)
-
-    //   changeLang()
-    // }
     const text = lang === 'ch' ? require('@/lang/chinese.json') : require('@/lang/english.json')
     if(loginStatus) {
       return (
@@ -31,9 +46,6 @@ class Login extends React.Component<any> {
       return (
         <React.Fragment>
           <div className={styles.wrapper}>
-             {/* <p onClick={addpage}>
-                dianji{this.state.page}
-            </p> */}
             <div className={styles.button} onClick={changeLang}>
               {buttonText()}
             </div>

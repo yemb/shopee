@@ -117,7 +117,7 @@ class Me extends React.Component<IProps> {
             <section className={styles.list}>
             {
                 nowEvent().size ?
-                <ListUI events={nowEvent()} hasMore={false} loading={true} identify="me"/> :
+                <ListUI events={nowEvent()} hasMore={false} identify="me"/> :
                 <Nothing status="me"/>
             }
             </section>
