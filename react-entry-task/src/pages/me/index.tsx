@@ -7,7 +7,18 @@ import Header from '@/common/header'
 import ListUI from '@/common/listUI'
 import Nothing from '@/common/nothing'
 
-class Me extends React.Component<any> {
+interface IProps {
+    status: string, 
+    toggleStatus: any,
+    likeList: any,
+    goingList:any,
+    pastList: any,
+    myInfo: any,
+    success: any,
+    getTypeList: any,
+    getMyInfo: any
+}
+class Me extends React.Component<IProps> {
   public render() {
     const {
         status, 
@@ -18,7 +29,6 @@ class Me extends React.Component<any> {
         myInfo,
         success
     } = this.props
-    console.log('myInfo',myInfo)
     const nowEvent = () => {
         if(status === 'liked') {
             return likeList

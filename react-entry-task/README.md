@@ -1,5 +1,4 @@
 ## 开始
---------
 ```
 npm install
 ```
@@ -9,7 +8,6 @@ npm start
 ```
 
 ## 目录结构
---------
 ```
   '    |-- src',
   '        |-- App.tsx', // react-router-dom 实现路由。
@@ -55,6 +53,7 @@ npm start
   '        |   +-- login', // 登陆页
   '        |   +-- list', // 列表页
   '        |   +-- me', // 个人页
+  '        |   +-- notFound', // 404 页面
 
   '        |-- util', // 工具库
   '        |   |-- time.js', // 对时间判断以及时间格式转换的一些函数
@@ -71,9 +70,8 @@ npm start
 ```
 
 ## 自适应方案设计
--------
 
-###### viewport.js
+#### viewport.js
 结合px2rem组件，以40为基准计算准确的全局fontsize，
 如iphone5，获取其visual viewport与理想viewport的比值，再与20相乘就是40。
 如iphone， 750 / 320 * 20 = 46.875px 为根font-size
@@ -84,7 +82,7 @@ npm start
 '        |-- viewport.js', // 自适应方案，在webpack的entry中添加一个入口文件即可。
 ```
 
-###### px2rem 插件
+#### px2rem 插件
 以40px为font-size把所有px转为rem格式。如60px为1.5rem
 
 ```
@@ -102,7 +100,7 @@ use: [
 ]
 ```
 
-###### config/webpack.config.dev.js 
+#### config/webpack.config.dev.js 
 加入
 ```
 entry: [
@@ -114,19 +112,18 @@ entry: [
 ```
 
 ## redux设计
--------
 
 1. 几乎所有数据都存在store中。
 2. 全局有一个store，每个页面也有自己的一个store
 3. 每个store都会有 actionCreator进行action的定义，constants进行action的type的定义，reducer获取action，并进行对数据的操作
 
-###### immutable.js
+#### immutable.js
 把所有的store数据变成不可变数据，通过其定义的几个api，get、set、getIn、merge进行数据的获取和操作。
 
-###### redux-immutable
+#### redux-immutable
 combineReducers，把所有页面的reducer结合在一起
 
-###### react-redux
+#### react-redux
 在index.tsx中
 ```
   <Provider store={store}>
@@ -140,10 +137,56 @@ combineReducers，把所有页面的reducer结合在一起
     export default connect(mapStateToProps, mapDispatchToProps)(List);
 ```
 
-###### redux-thunk、redux-saga
+#### redux-thunk、redux-saga
 redux-thunk 把export的action可以是一个函数，并在函数中进行异步操作，然后再dispatch一个action给到reducer。
 redux-saga 劫持指定 type 的action，然后进行异步操作后，再put一个action给到reducer。
 
-
 ##  css module
     typings-for-css-modules-loader, 替代 css-loader ，通过css文件自动生成.d.ts声明文件
+
+##  无限加载滚动
+#### refs获取滚动元素
+```
+    private myRef: React.RefObject<HTMLDivElement>;
+    …… 
+    this.myRef = React.createRef();
+    ……
+    <div 
+        className={styles.Wrapper}
+        ref={this.myRef}
+    >
+```
+
+#### 添加监听滚动事件
+根据 scrollTop、scrollHeight、clientHieght的关系判断是否滚动到了底部。
+```
+public handleScroll() {
+        const scrollTop = this.myRef.current!.scrollTop
+        const scrollHeight = this.myRef.current!.scrollHeight
+        const clientHeight = this.myRef.current!.clientHeight
+        const preLoadDis = 30
+        if(this.state.isend) {
+            return
+        }
+        if((scrollTop + clientHeight) >= (scrollHeight - preLoadDis) && this.state.loading === false){
+            this.setState ({
+                loading: true
+            })
+            setTimeout(()=>{
+                this.props.getMoreEvent(this.props.page, this.props.activeChannel, this.props.activeDate)
+                this.setState({
+                    loading: false
+                })
+            },500)
+        }
+    }
+    public componentDidMount() {
+        console.log(this.myRef.current)
+        this.myRef.current!.addEventListener('scroll',this.handleScroll)
+    }
+```
+
+## 登录态问题
+1. 封装axios请求时，对需要token字段的请求判断sessionStorage中是否有token字段
+2. 如果没有则跳到login页面，并提示需要先登录。如有则取token加入header中，继续请求。
+3. login成功返回的token字段存入sessionStorage中

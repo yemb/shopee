@@ -5,6 +5,7 @@ import Detail from './pages/detail'
 import List from './pages/list'
 import Login from './pages/login'
 import Me from './pages/me'
+import notFound from './pages/notFound'
 
 // import store from './store'
 
@@ -18,6 +19,7 @@ class App extends React.Component {
             <Route path='/list' exact={true} component={List} />
             <Route path='/me' exact={true} component={Me} />
             <Route path='/detail/:id' exact={true} component={Detail} />
+            <Route path='*' exact={true} component={notFound}/>
           </div>
         </BrowserRouter>
     );
