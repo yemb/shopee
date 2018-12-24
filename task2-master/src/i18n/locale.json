@@ -1,0 +1,17 @@
+{
+  "en-us": {
+    "login_title_big": "BLACK CAT",
+    "login_title_small": "FIND THE MOST LOVED ACTIVITIES",
+    "login_username_placeholder": "Username",
+    "login_password_placeholder": "Password",
+    "login_submit_value":"SIGN IN"
+  },
+  "zh-cn": {
+    "login_title_big": "黑 猫",
+    "login_title_small": "发现最热的活动",
+    "login_username_placeholder": "用户名",
+    "login_password_placeholder": "密码",
+    "login_submit_value":"登录"
+
+  }
+}

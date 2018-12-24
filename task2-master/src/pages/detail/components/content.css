@@ -1,0 +1,175 @@
+.container {
+    padding-top: 16px;
+}
+
+.whenContainer {
+    width: 288px;
+    padding: 16px 16px 0;
+    border-bottom: 1px solid #E8E8E8;
+    display: inline-block;
+    position: relative;
+}
+
+.label {
+    position: relative;
+    padding-left: 8px;
+    font-family: "SourceSansPro-Semibold";
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #8560A9;
+}
+
+.label::before {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 4px;
+     height: 20px;
+     border-radius: 2px;
+     background-color: #8560A9;
+     content: '';
+ }
+
+
+.whenContent {
+    display: inline-block;
+    margin: 10px 0 16px;
+    width: 50%;
+    font-size: 0;
+    vertical-align: top;
+}
+
+.whenContent:first-of-type {
+     border-right: 1px solid #E8E8E8;
+ }
+
+.date {
+    margin-top: 6px;
+    padding-left: 20px;
+    font-family: "SourceSansPro-Regular";
+    font-size: 16px;
+    line-height: 20px;
+    color: #67616D;
+}
+
+.dateFrom {
+    composes: date;
+    margin-left: 10px;
+    background: url(./../assets/date-from.svg) 0 center no-repeat;
+    background-size: 16px;
+}
+
+.dateTo {
+    composes: date;
+    margin-left: 15px;
+    background: url(./../assets/date-to.svg) 0 center no-repeat;
+    background-size: 16px;
+}
+
+.whenTime {
+    margin-top: 10px;
+    padding-left: 25px;
+}
+
+.whenTime span {
+    display: inline-block;
+    color: #AECB4F;
+    vertical-align: bottom;
+}
+
+.whenTime span:first-child {
+    font-size: 32px;
+    line-height: 32px;
+}
+
+.whenTime span:last-child {
+    margin: 0 0 3px 5px;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+
+.whereContainer {
+    width: 288px;
+    padding: 16px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+
+.address {
+    margin-top: 10px;
+    font-family: 'SourceSansPro-Semibold';
+    font-size: 14px;
+    line-height: 24px;
+    color: #67616D;
+    font-weight: bold;
+}
+
+.addressDetail {
+    font-size: 14px;
+    line-height: 24px;
+    color: #67616D;
+}
+
+
+
+
+.imgOutterContainer {
+    padding: 0 16px;
+    margin-bottom: 12px;
+    height: 100px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+
+.imgInnerContainer {
+    white-space:nowrap;
+}
+
+
+.imgItem {
+    display: inline-block;
+    margin-right: 12px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+
+
+.contentContainer {
+    position: relative;
+    padding: 0 16px 20px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.content {
+    font-size: 14px;
+    line-height: 24px;
+    color: #67616D;
+}
+
+.contentMask {
+    position: absolute;
+    width: 320px;
+    height: 57px;
+    bottom: 20px;
+    left: 0;
+    background: linear-gradient(rgba(250, 249, 252, 0), rgba(250, 249, 252, .7), rgba(255, 255, 255, 1));
+}
+
+.maskButton {
+    position: absolute;
+    padding: 0 13px;
+    right: 10px;
+    bottom: 0;
+    height: 24px;
+    border-radius: 12px;
+    font-family: "SourceSansPro-Semibold";
+    font-size: 10px;
+    line-height: 24px;
+    color: #67616D;
+    background-color: #D5EF7F;
+    -webkit-transform: scale(0.8);
+}

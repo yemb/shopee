@@ -1,0 +1,34 @@
+.header {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color: #8560A9;
+    display: flex;
+}
+.icon {
+    position: absolute;
+    top: 8px;
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+}
+
+.left {
+    composes:icon;
+    left: 16px;
+    background: url(./assets/home.svg) center no-repeat;
+    background-size: 24px 24px;
+}
+
+.right {
+    composes:icon;
+    right: 16px;
+    border-radius: 100%;
+}
+
+.title{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

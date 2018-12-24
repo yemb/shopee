@@ -1,0 +1,56 @@
+.container {
+    padding: 16px 0 0;
+}
+
+.channelName {
+    margin: 0 16px;
+    display: inline-block;
+    padding: 0 8px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #8560A9;
+    border: 1px solid #D3C1E5;
+    border-radius: 10px;
+}
+
+.title {
+    margin: 15px 16px 0;
+    font-family: 'SourceSansPro-Semibold';
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: bold;
+    color: #453257;
+}
+
+.creatorInfo {
+    padding: 24px 16px;
+    font-size: 0;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.avatar {
+    display: inline-block;
+    margin-right: 12px;
+    width: 36px;
+    height: 36px;
+    vertical-align:top;
+    border-radius: 100%;
+}
+
+.info {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.username {
+    font-size: 14px;
+    line-height: 18px;
+    color: #67616D;
+}
+
+.date {
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #BABABA;
+}

@@ -1,0 +1,50 @@
+.container {
+    padding: 24px 16px 70px;
+}
+
+.comment {
+    position: relative;
+    margin-top: 16px;
+    padding-left: 44px;
+    font-size: 0;
+}
+
+.comment:first-child {
+     margin-top: 0;
+ }
+
+.avatar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    vertical-align: top;
+    border-radius: 100%;
+}
+
+.username {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 15px;
+    color: #8560A9;
+}
+
+.datetime {
+    display: inline-block;
+    margin-left: 12px;
+    font-size: 10px;
+    line-height: 15px;
+    color: #BABABA;
+}
+
+.content {
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #67616D;
+}
+
+.empty {
+    height: 56px;
+}

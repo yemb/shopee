@@ -1,0 +1,116 @@
+.container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0;
+}
+
+.comment {
+    display: inline-block;
+    width: 90px;
+    height: 56px;
+    background: #8560A9 url(./../assets/comment-single.svg) 40px center no-repeat;
+    background-size: 23px;
+    vertical-align: top;
+    fill: #AECB4F;
+}
+
+.like {
+    display: inline-block;
+    width: 90px;
+    height: 56px;
+    background: #8560A9 url(./../assets/like-outline.svg) 30px center no-repeat;
+    background-size: 24px;
+    vertical-align: top;
+}
+
+.liked {
+    display: inline-block;
+    width: 90px;
+    height: 56px;
+    background: #8560A9 url(./../assets/like.svg) 30px center no-repeat;
+    background-size: 24px;
+    vertical-align: top;
+}
+
+.join{
+    display: inline-block;
+    padding-left: 70px;
+    width: 70px;
+    height: 56px;
+    font-size: 12px;
+    line-height: 60px;
+    color: #788C36;
+
+    background: #D5EF7F url(./../assets/check-outline.svg) 39px center no-repeat;
+    background-size: 20px;
+    vertical-align: top;
+}
+
+.joined {
+    display: inline-block;
+    padding-left: 70px;
+    width: 70px;
+    height: 56px;
+    font-size: 12px;
+    line-height: 60px;
+    color: #788C36;
+
+    background: #D5EF7F url(./../assets/check.svg) 39px center no-repeat;
+    background-size: 20px;
+    vertical-align: top;
+}
+
+.close{
+    display: inline-block;
+    width: 36px;
+    height: 56px;
+    background: #8560A9 url(./../assets/cross.svg) center center no-repeat;
+    background-size: 15px;
+
+    vertical-align: bottom;
+}
+.inputContainer{
+    display: flex;
+}
+.inputWrapper {
+    flex:1;
+    display: flex;
+    width: 220px;
+    height: 56px;
+    background-color: #8560A9;
+    align-items: center;
+}
+
+.input {
+    display: inline-block;
+    margin-right: 14px;
+    padding: 0 19px;
+    width: 207px;
+    height: 32px;
+    border: 0;
+    border-radius: 20px;
+    font-size: 14px;
+    line-height: 32px;
+    color: #67616D;
+    box-sizing: border-box;
+}
+
+.input:focus {
+     outline: none;
+ }
+
+.input::placeholder {
+     font-family: "SourceSansPro-Regular";
+     color: #D3C1E5;
+ }
+
+.send {
+    display: inline-block;
+    width: 64px;
+    height: 56px;
+    background: #D5EF7F url(./../assets/send.svg) center center no-repeat;
+    background-size: 28px;
+    vertical-align: bottom;
+}
+

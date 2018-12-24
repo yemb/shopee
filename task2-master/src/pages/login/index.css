@@ -1,0 +1,81 @@
+.login{
+    height: 100vh;
+    background: url('./assets/Street-Dance-01.jpg') center 0 no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    flex:1;
+    background-color: rgba(133, 96, 169, 0.7);
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.inputWrapper{
+    width:240px;
+    height:40px;
+    border-radius:20px;
+    border: 1px solid #D3C1E5;
+    display:flex;
+    overflow:hidden;
+
+}
+
+.icon{
+    width:13.3px;
+    height:13.3px;
+    margin:13.3px;
+}
+
+
+.input{
+    flex:1;
+    font-size: 16px;
+    color:#453257;
+    background-color: transparent;
+    border:0
+}
+
+.input:focus{
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.input::placeholder{
+    color: #D3C1E5;
+}
+.titleSmall{
+    margin-top: 69px;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #D5EF7F;
+    font-family: "SourceSansPro-Semibold";
+}
+.titleBig{
+    margin-top: 16px;
+    margin-bottom: 37px;
+    font-size: 24px;
+    color: #D5EF7F;
+    font-family: "SourceSansPro-Bold";
+}
+
+.logo{
+    height:64px;
+    width:64px;
+    border:1px #D5EF7F solid;
+    border-radius:32px;
+    display:flex;
+    align-items:center;
+    justify-content:center
+}
+
+.sign{
+    height:64px;
+    background-color:#D5ef7f;
+    text-align: center;
+    font-family: "SourceSansPro-Semibold";
+    font-size: 16px;
+}

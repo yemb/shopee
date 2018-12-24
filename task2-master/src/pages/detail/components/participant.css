@@ -1,0 +1,51 @@
+.container {
+    padding-top: 24px;
+}
+
+.statistics {
+    padding: 0 16px;
+    font-size: 0;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.statistics:last-child {
+     margin-top: 12px;
+ }
+
+.countContainer {
+    display: inline-block;
+    width: 50px;
+    margin-bottom: 12px;
+    padding-left: 17px;
+    font-size: 12px;
+    line-height: 24px;
+    color: #67616D;
+    vertical-align: top;
+}
+
+.going {
+    composes: countContainer;
+    background: url(./../assets/check-outline.svg) 0 center no-repeat;
+    background-size: 12px;
+}
+
+.like {
+    composes: countContainer;
+    background: url(./../assets/like-outline.svg) 0 center no-repeat;
+    background-size: 12px;
+}
+
+.avatarList {
+    display: inline-block;
+    width: 217px;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.avatar {
+    display: inline-block;
+    margin: 0 7px 12px 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+}
